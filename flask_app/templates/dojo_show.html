@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <title>Dojo Show</title>
+</head>
+<body>
+    <h1>{{dojos[0]['name']}} Ninjas</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dojo in dojos %}
+            <tr>
+                <td>{{dojo['first_name']}}</td>
+                <td>{{dojo['last_name']}}</td>
+                <td>{{dojo['age']}}</td>
+                <td><a href="">edit</a> | <a href="">delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/" class="mx-auto">Home</a>
+</body>
+</html>
