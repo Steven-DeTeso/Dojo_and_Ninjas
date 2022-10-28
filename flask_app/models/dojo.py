@@ -19,7 +19,7 @@ class Dojo:
         for dojo in results: #type: ignore
             #print(dojo) #coming back is :dict
             dojos.append( cls(dojo) )
-            #print(dojos) #coming back is list of objects
+            # print(dojos) #coming back is list of objects
         return dojos
 
     @classmethod

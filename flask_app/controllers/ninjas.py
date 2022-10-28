@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for #type: ignore
 from flask_app.controllers.dojos import r_dojo_show # type: ignore
 from flask_app.models.dojo import Dojo
 from flask_app.models.dojo import Ninja
@@ -12,7 +12,7 @@ def r_ninjas():
 def create_ninja():
     print(request.form)
     Ninja.insert_into(request.form)
-    return redirect(url_for('rd_dojo_show', id = request.form.get('dojo_id')))
+    return redirect(url_for('r_dojo_show', id = request.form.get('dojo_id')))
 
 @app.route('/edit/ninja/<int:id>')
 def edit_ninja(id):

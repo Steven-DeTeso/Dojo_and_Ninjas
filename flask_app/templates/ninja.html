@@ -14,7 +14,7 @@
         <div class="form-group new_ninja">
             <form action="/create/ninja" method="POST">
                 <label for="dojos">Dojo:</label>
-                <select name="{{dojo_id}}" class="form-control">
+                <select name="dojo_id" class="form-control">
                     <option value="select" disabled>--SELECT ONE--</option>
                     {% for dojo in dojos %}
                     <option value="{{dojo.id}}">{{ dojo.name }}</option>
@@ -26,9 +26,6 @@
                 <input type="text" name="last_name" class="form-control">
                 <label for="age">Age:</label>
                 <input type="text" name="age" class="form-control">
-                {% for dojo in dojos %}
-                <input type="hidden" name="dojo_id" value="{{dojo.id}}">
-                {% endfor %}
                 <input type="submit" value="CREATE">
             </form>
         </div>
