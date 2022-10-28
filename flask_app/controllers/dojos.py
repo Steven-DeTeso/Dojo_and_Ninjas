@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect # type: ignore
 from flask_app.models.dojo import Dojo
+from flask_app.models.ninja import Ninja
 from flask_app import app
 
 @app.route('/')
@@ -23,15 +24,5 @@ def r_dojo_show(id):
     data = {
         'id': id
     }
-    return render_template('dojo_show.html', dojos = Dojo.get_one_with_ninjas(data))
-
-# @app.route('/dojos_show')
-# def rd_dojo_show1():
-#     return redirect('/dojos_show/<int:id>')
-
-@app.route('/dojos_show/<int:id>')
-def rd_dojo_show(id):
-    data = {
-            'id': id
-        }
-    return render_template('dojo_show.html', dojos = Dojo.get_one_with_ninjas(data))
+    # print(Dojo.get_one_with_ninjas(data))
+    return render_template('dojo_show.html', dojos = Dojo.get_one_with_ninjas(data), ninjas = Ninja.get_all())
